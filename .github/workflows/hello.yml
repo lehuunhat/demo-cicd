@@ -26,3 +26,6 @@ jobs:
 
       - name: Kiểm tra .NET
         run: dotnet --version
+
+      - name: Error
+        run: abcxyz
