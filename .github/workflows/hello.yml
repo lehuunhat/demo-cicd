@@ -1,17 +1,28 @@
-steps:
-  - uses: actions/checkout@v4
+name: Test runner
 
-  - name: Hiển thị thư mục hiện tại
-    run: pwd
+on:
+  push:
+    branches:
+      - main
 
-  - name: Liệt kê file
-    run: ls -la
+jobs:
+  hello:
+    runs-on: ubuntu-latest
 
-  - name: Kiểm tra phiên bản Git
-    run: git --version
+    steps:
+      - uses: actions/checkout@v4
 
-  - name: Kiểm tra Node
-    run: node --version
+      - name: Hiển thị thư mục hiện tại
+        run: pwd
 
-  - name: Kiểm tra .NET
-    run: dotnet --version
+      - name: Liệt kê file
+        run: ls -la
+
+      - name: Kiểm tra Git
+        run: git --version
+
+      - name: Kiểm tra Node
+        run: node --version
+
+      - name: Kiểm tra .NET
+        run: dotnet --version
