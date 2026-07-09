@@ -1,26 +1,17 @@
-name: Demo CI
+steps:
+  - uses: actions/checkout@v4
 
-on:
-  push:
-    branches:
-      - main
+  - name: Hiển thị thư mục hiện tại
+    run: pwd
 
-jobs:
+  - name: Liệt kê file
+    run: ls -la
 
-  hello:
+  - name: Kiểm tra phiên bản Git
+    run: git --version
 
-    runs-on: ubuntu-latest
+  - name: Kiểm tra Node
+    run: node --version
 
-    steps:
-
-      - name: Download Source
-        uses: actions/checkout@v4
-
-      - name: Show Message
-        run: echo "Xin chào CI/CD"
-
-      - name: List Files
-        run: ls
-
-      - name: Finish
-        run: echo "Build thành công"
+  - name: Kiểm tra .NET
+    run: dotnet --version
