@@ -1,0 +1,26 @@
+name: Demo CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  hello:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Download Source
+        uses: actions/checkout@v4
+
+      - name: Show Message
+        run: echo "Xin chào CI/CD"
+
+      - name: List Files
+        run: ls
+
+      - name: Finish
+        run: echo "Build thành công"
